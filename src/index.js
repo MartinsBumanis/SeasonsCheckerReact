@@ -5,13 +5,13 @@ import ReactDOM from 'react-dom';
 
 class App extends React.Component{
     constructor(props){
-        super(props);
+        super(props); // this is a ceremonial thing to do every time
 
-        this.state = {lat: null, errorMessage: '' };
+        this.state = {lat: null, errorMessage: '' }; //initiate states
 
-        window.navigator.geolocation.getCurrentPosition(
+        window.navigator.geolocation.getCurrentPosition( //built in browser functionality to get position
             (position) => {
-                this.setState({lat: position.coords.latitude})
+                this.setState({lat: position.coords.latitude}) //sets lattitude to state
             },
             (err) => {
                 this.setState({errorMessage: err.message})
@@ -30,9 +30,6 @@ class App extends React.Component{
 
     
     return <div>Loading</div>
-    
-        
-
     
     }; 
 };
